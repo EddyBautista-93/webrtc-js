@@ -8,6 +8,7 @@ var socketIO = require("socket.io");
 app.use(express.static("public"));
 
 app.get("/", function (req, res) {
+    //use express and ejs to render a html page to make the UI for file sharing. 
   res.render("index.ejs");
 });
 
@@ -39,6 +40,6 @@ io.socket.on("connection", function (socket){
 
         var numClient = clientsInRoom ? clientsInRoom.size: 0;
         log("Room " + room + " now has " + numClient + " client(s)");
-        
+
     })
 })
